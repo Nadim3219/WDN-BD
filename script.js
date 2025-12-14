@@ -246,12 +246,13 @@
         }
     }
 
-    // --- Form Validation JS ---
+(function() {
     document.addEventListener('DOMContentLoaded', function() {
         const form = document.getElementById('contactForm');
         const successMessage = document.getElementById('successMessage');
 
         if (!form) return;
+        const FORMSPREE_URL = 'https://formspree.io/f/xovgbqkj'; 
         
         const validationRules = {
             firstName: {
@@ -359,16 +360,40 @@
                     message: form.message.value.trim()
                 };
 
-                console.log('Form is valid. Data to be sent:', formData);
                 
-                if (successMessage) {
-                    successMessage.textContent = '✅ Message sent successfully! Thank you.';
-                }
-                form.reset();
-                setTimeout(() => {
-                    if (successMessage) successMessage.textContent = '';
-                }, 5000);
-
+                fetch(FORMSPREE_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                })
+                .then(response => {
+                    if (response.ok) {
+                        if (successMessage) {
+                            successMessage.textContent = '✅ Message sent successfully! Thank you.';
+                        }
+                        form.reset();
+                    } else {
+                        response.json().then(data => {
+                            if (successMessage) {
+                                successMessage.textContent = `❌ Submission failed: ${data.error || 'Server error'}. Please try again later.`;
+                            }
+                        });
+                    }
+                })
+                .catch(error => {
+                    console.error('Network Error:', error);
+                    if (successMessage) {
+                        successMessage.textContent = '❌ Submission failed due to a network error. Please check your connection.';
+                    }
+                })
+                .finally(() => {
+                    setTimeout(() => {
+                        if (successMessage) successMessage.textContent = '';
+                    }, 5000);
+                });
+            
             } else {
                 const firstInvalid = document.querySelector('.error');
                 if (firstInvalid) {
@@ -382,7 +407,6 @@
     });
 
 })();
-
 //telegram input
 document.addEventListener('DOMContentLoaded', function() {
     const sendBtn = document.getElementById("sendBtn");
