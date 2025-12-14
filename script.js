@@ -1,5 +1,10 @@
+// --- JAVASCRIPT FILE: Combined Functionality ---
+
 (function() {
     
+    // =================================================================
+    // 1. MOBILE MENU & NAVIGATION LOGIC
+    // =================================================================
     const mobileMenuToggle = document.getElementById('mobileMenuToggle');
     const closeMobileMenuBtn = document.getElementById('closeMobileMenu');
     const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
@@ -64,20 +69,10 @@
         observer.observe(mobileMenu, { attributes: true });
         
     }
-
-    window.addEventListener('scroll', function() {
-        const navbar = document.querySelector('.d2c_navbar');
-        if (navbar) {
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-                body.classList.add('has-fixed-nav');
-            } else {
-                navbar.classList.remove('scrolled');
-                body.classList.remove('has-fixed-nav');
-            }
-        }
-    });
-
+    
+    // =================================================================
+    // 2. SCROLL & ANIMATION LOGIC
+    // =================================================================
     const sections = document.querySelectorAll('section');
 
     function checkScroll() {
@@ -123,6 +118,23 @@
             }
         });
     }
+    
+    // =================================================================
+    // 3. EVENT LISTENERS FOR SCROLL & LOAD
+    // =================================================================
+
+    window.addEventListener('scroll', function() {
+        const navbar = document.querySelector('.d2c_navbar');
+        if (navbar) {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+                body.classList.add('has-fixed-nav');
+            } else {
+                navbar.classList.remove('scrolled');
+                body.classList.remove('has-fixed-nav');
+            }
+        }
+    });
 
     window.addEventListener('scroll', checkScroll);
     window.addEventListener('scroll', animateServiceBoxes);
@@ -156,17 +168,19 @@
         
         checkScroll();
         animateServiceBoxes();
-        
         setActiveNavLink();
     });
 
-    // --- Slider JS ---
+    // =================================================================
+    // 4. SLIDER LOGIC
+    // =================================================================
     const track = document.getElementById("track");
     if (track) {
         let cards = Array.from(document.querySelectorAll(".card"));
         
         if (cards.length > 0) {
             let index = 0;
+            // Duplicate content for infinite loop effect
             track.innerHTML += track.innerHTML;
             cards = document.querySelectorAll(".card");
             
@@ -246,88 +260,92 @@
         }
     }
 
-(function() {
+    // =================================================================
+    // 5. TELEGRAM INTEGRATION (Footer Email Input)
+    // =================================================================
+    document.addEventListener('DOMContentLoaded', function() {
+        const sendBtn = document.getElementById("sendBtn");
+        const userEmail = document.getElementById("userEmail");
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
+
+        if (!sendBtn || !userEmail) return;
+
+        sendBtn.addEventListener("click", function() {
+            let email = userEmail.value.trim();
+
+            if (email === "") {
+                alert("Please enter your email!");
+                return;
+            }
+            if (!emailPattern.test(email)) { 
+                alert("Please enter a valid email address!");
+                return;
+            }
+
+            let phone = "8801608069154";
+            let textMessage = encodeURIComponent("User Email: " + email);
+            let tgLink = "https://t.me/+" + phone + "?text=" + textMessage;
+            window.open(tgLink, "_blank"); 
+        });
+    });
+
+    // =================================================================
+    // 6. CONTACT FORM VALIDATION & Formspree SUBMISSION
+    // =================================================================
     document.addEventListener('DOMContentLoaded', function() {
         const form = document.getElementById('contactForm');
         const successMessage = document.getElementById('successMessage');
 
-        if (!form) return;
+        if (!form) return; 
+
         const FORMSPREE_URL = 'https://formspree.io/f/xovgbqkj'; 
         
         const validationRules = {
-            firstName: {
-                required: true,
-                minLength: 3,
-                pattern: /^[a-zA-Z\s\-']+$/
-            },
-            lastName: {
-                required: true,
-                minLength: 2,
-                pattern: /^[a-zA-Z\s\-']+$/
-            },
-            email: {
-                required: true,
-                pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-            },
-            message: {
-                required: true,
-                minLength: 10,
-                maxLength: 500
-            }
+            firstName: { required: true, minLength: 3, pattern: /^[a-zA-Z\s\-']+$/ },
+            lastName: { required: true, minLength: 2, pattern: /^[a-zA-Z\s\-']+$/ },
+            email: { required: true, pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/ },
+            message: { required: true, minLength: 10, maxLength: 500 }
         };
 
         function showError(fieldId, message) {
             const errorElement = document.getElementById(fieldId + 'Error');
             const inputElement = document.getElementById(fieldId);
-            
             if (errorElement) errorElement.textContent = message;
             if (inputElement) inputElement.classList.add('error');
+            if (errorElement) errorElement.style.display = 'block';
         }
 
         function clearError(fieldId) {
             const errorElement = document.getElementById(fieldId + 'Error');
             const inputElement = document.getElementById(fieldId);
-            
-            if (errorElement) errorElement.textContent = '';
+            if (errorElement) { errorElement.textContent = ''; errorElement.style.display = 'none'; }
             if (inputElement) inputElement.classList.remove('error');
         }
 
         function validateField(fieldId) {
             const input = document.getElementById(fieldId);
             if (!input) return true;
-            
             const rules = validationRules[fieldId];
             const value = input.value.trim();
             let isValid = true;
-            
             clearError(fieldId);
 
             if (rules.required && value === '') {
                 showError(fieldId, `${input.name} is required.`);
                 isValid = false;
-            } 
-            
-            else if (rules.minLength && value.length < rules.minLength) {
+            } else if (rules.minLength && value.length < rules.minLength) {
                 showError(fieldId, `${input.name} must be at least ${rules.minLength} characters.`);
                 isValid = false;
-            }
-
-            else if (rules.maxLength && value.length > rules.maxLength) {
+            } else if (rules.maxLength && value.length > rules.maxLength) {
                 showError(fieldId, `${input.name} cannot exceed ${rules.maxLength} characters.`);
                 isValid = false;
-            }
-            
-            else if (rules.pattern && !rules.pattern.test(value)) {
+            } else if (rules.pattern && !rules.pattern.test(value)) {
                 let message = `${input.name} is not in a valid format.`;
-                if (fieldId === 'email') {
-                    message = 'Please enter a valid email address.';
-                } else if (fieldId === 'firstName' || fieldId === 'lastName') {
-                    message = `${input.name} can only contain letters, spaces, hyphens, and apostrophes.`;
-                }
+                if (fieldId === 'email') message = 'Please enter a valid email address.';
+                else if (fieldId === 'firstName' || fieldId === 'lastName') message = `${input.name} can only contain letters, spaces, hyphens, and apostrophes.`;
                 showError(fieldId, message);
                 isValid = false;
             }
-            
             return isValid;
         }
 
@@ -341,43 +359,35 @@
 
         form.addEventListener('submit', function(e) {
             e.preventDefault();
-            
             let isFormValid = true;
-            
             Object.keys(validationRules).forEach(fieldId => {
-                if (!validateField(fieldId)) {
-                    isFormValid = false;
-                }
+                if (!validateField(fieldId)) isFormValid = false;
             });
-            
-            if (successMessage) successMessage.textContent = '';
+
+            if (successMessage) successMessage.textContent = ''; 
 
             if (isFormValid) {
-                const formData = {
-                    firstName: form.firstName.value.trim(),
-                    lastName: form.lastName.value.trim(),
-                    email: form.email.value.trim(),
-                    message: form.message.value.trim()
-                };
-
+                const formData = new FormData(form);
                 
                 fetch(FORMSPREE_URL, {
                     method: 'POST',
+                    body: formData,
                     headers: {
                         'Accept': 'application/json'
-                    },
-                    body: JSON.stringify(formData)
+                    }
                 })
                 .then(response => {
                     if (response.ok) {
                         if (successMessage) {
                             successMessage.textContent = '✅ Message sent successfully! Thank you.';
+                            successMessage.style.display = 'block';
                         }
                         form.reset();
                     } else {
                         response.json().then(data => {
                             if (successMessage) {
                                 successMessage.textContent = `❌ Submission failed: ${data.error || 'Server error'}. Please try again later.`;
+                                successMessage.style.display = 'block';
                             }
                         });
                     }
@@ -386,131 +396,30 @@
                     console.error('Network Error:', error);
                     if (successMessage) {
                         successMessage.textContent = '❌ Submission failed due to a network error. Please check your connection.';
+                        successMessage.style.display = 'block';
                     }
                 })
                 .finally(() => {
                     setTimeout(() => {
                         if (successMessage) successMessage.textContent = '';
+                        if (successMessage) successMessage.style.display = 'none';
                     }, 5000);
                 });
             
             } else {
-                const firstInvalid = document.querySelector('.error');
-                if (firstInvalid) {
-                    firstInvalid.focus();
-                }
                 if (successMessage) {
                     successMessage.textContent = '❌ Please correct the errors above and try again.';
+                    successMessage.style.display = 'block';
                 }
+                const firstInvalid = document.querySelector('.error');
+                if (firstInvalid) firstInvalid.focus();
+                
+                setTimeout(() => {
+                    if (successMessage) successMessage.textContent = '';
+                    if (successMessage) successMessage.style.display = 'none';
+                }, 5000);
             }
         });
     });
 
 })();
-//telegram input
-document.addEventListener('DOMContentLoaded', function() {
-    const sendBtn = document.getElementById("sendBtn");
-    const userEmail = document.getElementById("userEmail");
-
-    if (!sendBtn || !userEmail) return;
-
-    sendBtn.addEventListener("click", function() {
-        let email = userEmail.value.trim();
-
-        if (email === "") {
-            alert("Please enter your email!");
-            return;
-        }
-
-        let phone = "8801608069154";
-        let textMessage = encodeURIComponent("User Email: " + email);
-        let tgLink = "https://t.me/+" + phone + "?text=" + textMessage;
-        window.open(tgLink, "_blank");
-    });
-});
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('contactForm');
-    const successMessage = document.getElementById('successMessage');
-
-    const validationRules = {
-        firstName: { required: true, minLength: 3, pattern: /^[a-zA-Z\s\-']+$/ },
-        lastName: { required: true, minLength: 2, pattern: /^[a-zA-Z\s\-']+$/ },
-        email: { required: true, pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/ },
-        message: { required: true, minLength: 10, maxLength: 500 }
-    };
-
-    function showError(fieldId, message) {
-        const errorElement = document.getElementById(fieldId + 'Error');
-        const inputElement = document.getElementById(fieldId);
-        if (errorElement) errorElement.textContent = message;
-        if (inputElement) inputElement.classList.add('error');
-        if (errorElement) errorElement.style.display = 'block';
-    }
-
-    function clearError(fieldId) {
-        const errorElement = document.getElementById(fieldId + 'Error');
-        const inputElement = document.getElementById(fieldId);
-        if (errorElement) { errorElement.textContent = ''; errorElement.style.display = 'none'; }
-        if (inputElement) inputElement.classList.remove('error');
-    }
-
-    function validateField(fieldId) {
-        const input = document.getElementById(fieldId);
-        if (!input) return true;
-        const rules = validationRules[fieldId];
-        const value = input.value.trim();
-        let isValid = true;
-        clearError(fieldId);
-
-        if (rules.required && value === '') {
-            showError(fieldId, `${input.name} is required.`);
-            isValid = false;
-        } else if (rules.minLength && value.length < rules.minLength) {
-            showError(fieldId, `${input.name} must be at least ${rules.minLength} characters.`);
-            isValid = false;
-        } else if (rules.maxLength && value.length > rules.maxLength) {
-            showError(fieldId, `${input.name} cannot exceed ${rules.maxLength} characters.`);
-            isValid = false;
-        } else if (rules.pattern && !rules.pattern.test(value)) {
-            let message = `${input.name} is not in a valid format.`;
-            if (fieldId === 'email') message = 'Please enter a valid email address.';
-            else if (fieldId === 'firstName' || fieldId === 'lastName') message = `${input.name} can only contain letters, spaces, hyphens, and apostrophes.`;
-            showError(fieldId, message);
-            isValid = false;
-        }
-        return isValid;
-    }
-
-    Object.keys(validationRules).forEach(fieldId => {
-        const input = document.getElementById(fieldId);
-        if (input) {
-            input.addEventListener('input', () => validateField(fieldId));
-            input.addEventListener('blur', () => validateField(fieldId));
-        }
-    });
-
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        let isFormValid = true;
-        Object.keys(validationRules).forEach(fieldId => {
-            if (!validateField(fieldId)) isFormValid = false;
-        });
-
-        if (isFormValid) {
-            if (successMessage) {
-                successMessage.textContent = '✅ Message sent successfully! Thank you.';
-                successMessage.style.display = 'block';
-            }
-            form.submit();
-        } else {
-            if (successMessage) {
-                successMessage.textContent = '❌ Please correct the errors above and try again.';
-                successMessage.style.display = 'block';
-            }
-            const firstInvalid = document.querySelector('.error');
-            if (firstInvalid) firstInvalid.focus();
-        }
-    });
-});
