@@ -292,7 +292,7 @@
                     <div id="successMessage" class="success-message"></div>
                 </form>
             </div>
-
+             
             <div class="info-container">
                 <h2>Contact Us</h2>
                 <p>I enjoy new challenges. Get in touch using the details below for project proposals, freelance work, or consultation</p>
@@ -324,7 +324,15 @@
         </div>
     </div>
     </section>
-
+   <div id="customModal" class="modal-overlay hidden">
+     <div class="modal-content">
+        <span id="modalIcon" class="modal-icon"></span> 
+        
+        <h3 id="modalTitle"></h3>
+        <p id="modalBody"></p>
+        <button id="modalCloseButton" type="button"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+   </div>
     <!-- Footer -->
     <footer>
         <div class="footer-max-width-box">
@@ -357,7 +365,6 @@
         </div>
         <p>&copy; 2025 <strong>WDN-BD</strong> . All rights reserved.</p>
     </footer>
-
-    <script src="script.js"></script>
+         <script src="script.js"></script>
 </body>
 </html>
