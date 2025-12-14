@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="https://www.yiiframework.com/image/design/logo/yii3_sign_black.png">
+    <title>My portfolio website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <style>
+        .offer-max-width-box{
+            margin-top: 80px;
+        }
+        .d2c_navbar{
+            background-image: linear-gradient(135deg, rgba(225, 218, 253, 0.95), rgba(255, 255, 255, 0.95)) !important;
+        }
+        #join-me-section{
+           background: oklch(14.5% 0 0);
+        }
+        .join-me-box{
+           background: oklch(21.567% 0.05745 281.956);
+           margin-bottom: 100px;
+           border: 2px solid #2f1f58;
+           box-shadow: 0 10px 30px rgba(102, 69, 179, 0.3), inset 0 0 20px rgba(90, 61, 157, 0.1);
+        }
+        .contact-btn-join-box{
+            background-color: oklch(14.5% 0 0);
+        }
+        .contact-btn-join-box:hover{
+            background-color: oklch(21.567% 0.05745 281.956);
+            box-shadow: 0 10px 30px rgba(100, 65, 181, 0.3), inset 0 0 20px rgba(104, 68, 188, 0.1);
+        }
+    </style>
+    <!-- Navbar -->
+    <nav class="d2c_navbar sticky-top">
+        <div class="container">
+            <div id="d2c_main_nav">
+                <!-- Logo -->
+                <a class="navbar-brand" href="#home">
+                    <img src="logo/rial black logo.png" alt="Logo">
+                </a>
+
+                <!-- Desktop Navigation -->
+                <div class="js-clone-nav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="servise.html">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="portfolio.html">Portfolio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="contact.html" class="d2c_nav_btn">Contact Me</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Mobile Toggle Button -->
+                <button class="navbar-toggler" id="mobileMenuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+
+    <!-- Mobile Off-canvas Menu -->
+    <div class="d2c_mobile_view" id="mobileMenu">
+        <div class="d2c_mobile_header">
+            <div class="d2c_mobile_logo">
+                <img src="logo/my brand.png" alt="Logo">
+            </div>
+            <button class="d2c_cross_btn" id="closeMobileMenu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <div class="d2c_mobile_view_body">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="servise.html">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="portfolio.html">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="d2c_nav_btn">Contact Me</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="d2c_mobile_footer">
+            <p>&copy; 2025 WDN-BD. All rights reserved.</p>
+        </div>
+    </div>
+<!-- Services Section -->
+    <section id="services">
+         <div class="offer-max-width-box">
+           <h2>What Do I Offer</h2>
+         <p class="intro">I am a web developer who can create websites and web apps using HTML, CSS,  JavaScript, Python, Figma, and WordPress. I design custom components and build beautiful, user-friendly UIs.</p>
+    
+    <div class="offer-grid">
+        <div class="offer-card">
+            <i class="fas fa-laptop-code" style="color:#C0392B;"></i>
+            <h3>Web Development</h3>
+            <p>Creating responsive websites and web applications using HTML, CSS, JavaScript, and Python.</p>
+        </div>
+        <div class="offer-card">
+           <i class="fas fa-object-group" style="color:#16A085;"></i>
+            <h3>Custom Components</h3>
+            <p>Building reusable and modular components to make web applications simple and modular.</p>
+         </div>
+         <div class="offer-card">
+          <i class="fas fa-drafting-compass" style="color:#c11313;"></i>
+            <h3>UI Design</h3>
+            <p>Designing attractive, clean, and user-friendly interfaces using Figma.</p>
+         </div>
+         <div class="offer-card">
+            <i class="fas fa-code" style="color:#E67E22;"></i> 
+            <h3>JavaScript & React</h3>
+            <p>Creating dynamic and interactive web applications using React and Vanilla JavaScript.</p>
+         </div>
+         <div class="offer-card">
+            <i class="fas fa-plug" style="color:#27AE60;"></i> 
+            <h3>WordPress Integration</h3>
+            <p>Developing custom WordPress themes and plugins to make websites functional and easy to manage.</p>
+         </div>
+         <div class="offer-card">
+            <i class="fas fa-cogs" style="color:#4A90E2;"></i>   
+            <h3>Optimization</h3>
+            <p>Ensuring web performance optimization, responsive design, and smooth user experience.</p>
+          </div>
+       </div>
+          <a class="view-more-btn" href="#services">View More →</a>
+        </div>
+    </section>
+    <section id="join-me-section">
+    <div class="join-me-box">
+        <h2>Wanna join with me?</h2>
+        <p>It is a long established fact will be distracted.</p>
+        <a class="contact-btn-join-box" href="/#contact">Contact with me</a>
+     </div>
+   </section>
+  <!-- Footer -->
+    <footer>
+        <div class="footer-max-width-box">
+            <div class="footer-cotent-box">
+                <img src="logo/raal white logo.png" alt="logo" >
+                <p>I've been working as web developer for the past one years, and have experience</p>
+            </div>
+            <div class="footer-cotent-box">
+                <h3>Contact Details</h3>
+                <p><i class="fa-solid fa-phone"></i> +8801608069154</p>
+                <p><i class="fa-solid fa-envelope"></i> mdnadim9154@gmail.com</p>
+                <p><i class="fa-solid fa-location-dot"></i>Fulbaria Upazila24.6250561,Bangladesh </p>
+            </div>
+            <div class="footer-cotent-box">
+                <h3>Newsletter</h3>
+                <div class="email-box">
+                    <input type="text" id="userEmail" name="email" placeholder="Input your email" autocomplete="email" required>
+                  <div class="telegram-icon" id="sendBtn">
+                    <i class="fa-brands fa-telegram"></i>
+                  </div>
+               </div>
+
+
+                <div class="icon-box">
+                    <i class="fa-brands fa-square-facebook"></i>
+                    <i class="fa-brands fa-square-twitter"></i>
+                    <i class="fa-brands fa-linkedin"></i>
+                    <i class="fa-brands fa-square-instagram"></i>
+                </div>
+            </div>
+        </div>
+        <p>&copy; 2025 <strong>WDN-BD</strong> . All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

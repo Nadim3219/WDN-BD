@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Progress + Circle Icons Layout</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/png" href="https://www.yiiframework.com/image/design/logo/yii3_sign_black.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .about-main-disply-grid{
+            margin-top: 60px;
+            padding-top: 30px;
+        }
+        
+    </style>
+</head>
+<body>
+     <nav class="d2c_navbar sticky-top">
+        <div class="container">
+            <div id="d2c_main_nav">
+                <!-- Logo -->
+                <a class="navbar-brand" href="#home">
+                    <img src="logo/rial black logo.png" alt="Logo">
+                </a>
+
+                <!-- Desktop Navigation -->
+                <div class="js-clone-nav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="servise.html">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="portfolio.html">Portfolio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="contact.html" class="d2c_nav_btn">Contact Me</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Mobile Toggle Button -->
+                <button class="navbar-toggler" id="mobileMenuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+
+    <!-- Mobile Off-canvas Menu -->
+    <div class="d2c_mobile_view" id="mobileMenu">
+        <div class="d2c_mobile_header">
+            <div class="d2c_mobile_logo">
+                <img src="logo/my brand.png" alt="Logo">
+            </div>
+            <button class="d2c_cross_btn" id="closeMobileMenu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <div class="d2c_mobile_view_body">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="servise.html">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="portfolio.html">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="d2c_nav_btn">Contact Me</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="d2c_mobile_footer">
+            <p>&copy; 2025 WDN-BD. All rights reserved.</p>
+        </div>
+    </div>
+    <section id="about" class="about">
+        <div class="about-main-disply-grid">
+          <div class="about-img-box">
+            <img src="image/backgroundmyimage14.jpg" alt="About Us">
+          </div>
+         <div class="about-text-content">
+             <h2 class="about-h2">Get to Know Me</h2>
+             <p>I am a driven Web Developer, creating fast, responsive, and modern digital experiences. Leveraging my skills in HTML, CSS, JavaScript, Python, and WordPress, I build clean UIs, robust functionality, and fully optimized websites.<br>
+             I value code quality, visual balance, and client satisfaction—turning ideas into real, polished digital experiences is my specialty.</p>
+
+             <h3 class="about-h3">How can i help you</h3>
+             <p>I build flexible, creative, and high-quality websites using HTML, CSS, JavaScript, React,  Tailwind CSS, Node.js, and other modern tools. I focus on professional communication, timely delivery, and turning your ideas into polished digital experiences.</p>
+            <a class="about-hire-btn" href="/#contact">Hire Me</a>
+        </div>
+        </div>
+    </section>
+    
+<section id="skills-wrapper">
+
+<div class="layout-box">
+
+    <div class="progress-layout" id="prg-area"></div>
+
+    <div class="icon-layout">
+
+        <div class="icon-main">
+            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg">
+        </div>
+
+        <div class="small-icon i-pos1">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1452px-CSS3_logo_and_wordmark.svg.png">
+        </div>
+
+        <div class="small-icon i-pos2">
+            <img src="https://w7.pngwing.com/pngs/170/529/png-transparent-wordpress-cms-logo-thumbnail.png">
+        </div>
+
+        <div class="small-icon i-pos3">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jeet/jeet-original.svg">
+        </div>
+
+        <div class="small-icon i-pos4">
+            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg">
+        </div>
+
+        <div class="small-icon i-pos5">
+            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
+        </div>
+
+        <div class="small-icon i-pos6">
+            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg">
+        </div>
+
+    </div>
+    
+</div>
+
+</section>
+<section class="video" style="background-color: oklch(14.5% 0 0)">
+   <div class="video-box">
+  <iframe
+    width="100%"
+    height="366"
+    src="https://www.youtube.com/embed/jFBGxIaxvCM?loop=1&playlist=jFBGxIaxvCM&rel=0"
+    title="web development video"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+  </iframe>
+</div>
+<p>Coding & Web Development Videos</p>
+</section>
+  <footer>
+        <div class="footer-max-width-box">
+            <div class="footer-cotent-box">
+                <img src="logo/raal white logo.png" alt="logo" >
+                <p>I've been working as web developer for the past one years, and have experience</p>
+            </div>
+            <div class="footer-cotent-box">
+                <h3>Contact Details</h3>
+                <p><i class="fa-solid fa-phone"></i> +8801608069154</p>
+                <p><i class="fa-solid fa-envelope"></i> mdnadim9154@gmail.com</p>
+                <p><i class="fa-solid fa-location-dot"></i>Fulbaria Upazila24.6250561,Bangladesh </p>
+            </div>
+            <div class="footer-cotent-box">
+                <h3>Newsletter</h3>
+                  <div class="email-box">
+                    <input type="text" id="userEmail" name="email" placeholder="Input your email" autocomplete="email" required>
+                  <div class="telegram-icon" id="sendBtn">
+                    <i class="fa-brands fa-telegram"></i>
+                  </div>
+               </div>
+                <div class="icon-box">
+                    <i class="fa-brands fa-square-facebook"></i>
+                    <i class="fa-brands fa-square-twitter"></i>
+                    <i class="fa-brands fa-linkedin"></i>
+                    <i class="fa-brands fa-square-instagram"></i>
+                </div>
+            </div>
+        </div>
+        <p>&copy; 2025 <strong>WDN-BD</strong> . All rights reserved.</p>
+    </footer>
+<script src="script.js"></script>
+<script>
+(function(){
+
+    const SKILLS = [
+        { id:'s1', label:'HTML', value:95 },
+        { id:'s2', label:'CSS', value:97 },
+        { id:'s3', label:'WordPress', value:92 },
+        { id:'s4', label:'JavaScript', value:85 },
+        { id:'s5', label:'Python', value:72 }
+    ];
+
+    const POS = ['pos-center','pos-up','pos-down','pos-left','pos-right'];
+    const COLORS = ['#0d6efd','#dc3545','#ffc107','#ff06c5'];
+
+    const area = document.getElementById('prg-area');
+    const INST={};
+
+    function card(skill, pos){
+        const wrap=document.createElement('div');
+        wrap.className=`progress-block ${pos}`;
+
+        const circle=document.createElement('div');
+        circle.className='circle-box';
+
+        const svgNS="http://www.w3.org/2000/svg";
+        const r=48;
+        const circ=2*Math.PI*r;
+
+        const svg=document.createElementNS(svgNS,'svg');
+        svg.setAttribute('viewBox','0 0 120 120');
+
+        const defs=document.createElementNS(svgNS,'defs');
+        const grad=document.createElementNS(svgNS,'linearGradient');
+        grad.id="g-"+skill.id;
+        grad.setAttribute('x1','0%'); grad.setAttribute('y1','0%');
+        grad.setAttribute('x2','100%'); grad.setAttribute('y2','0%');
+
+        COLORS.forEach((c,i)=>{
+            const st=document.createElementNS(svgNS,'stop');
+            st.setAttribute('offset',`${i/(COLORS.length-1)*100}%`);
+            st.setAttribute('stop-color',c);
+            grad.appendChild(st);
+        });
+
+        defs.appendChild(grad);
+        svg.appendChild(defs);
+
+        const track=document.createElementNS(svgNS,'circle');
+        track.classList.add('circle-track');
+        track.setAttribute('cx','60'); track.setAttribute('cy','60'); track.setAttribute('r',r);
+
+        const prog=document.createElementNS(svgNS,'circle');
+        prog.classList.add('circle-prog');
+        prog.setAttribute('cx','60'); prog.setAttribute('cy','60'); prog.setAttribute('r',r);
+        prog.setAttribute('stroke',`url(#g-${skill.id})`);
+        prog.setAttribute('stroke-dasharray',circ);
+        prog.setAttribute('stroke-dashoffset',circ);
+        prog.dataset.circ=circ;
+        prog.dataset.target=skill.value;
+
+        svg.appendChild(track);
+        svg.appendChild(prog);
+
+        circle.appendChild(svg);
+
+        const center=document.createElement('div');
+        center.className='circle-center';
+
+        const pct=document.createElement('div');
+        pct.className='txt-percent';
+        pct.textContent='0%';
+        center.appendChild(pct);
+
+        circle.appendChild(center);
+
+        const lab=document.createElement('div');
+        lab.className='txt-skill';
+        lab.textContent=skill.label;
+
+        const sub=document.createElement('div');
+        sub.className='txt-sub';
+        sub.textContent='Proficiency';
+
+        wrap.appendChild(circle);
+        wrap.appendChild(lab);
+        wrap.appendChild(sub);
+
+        return {wrap,prog,pct};
+    }
+
+    SKILLS.forEach((s,i)=>{
+        const {wrap,prog,pct}=card(s,POS[i]);
+        area.appendChild(wrap);
+        INST[s.id]={prog,pct,target:s.value};
+    });
+
+    function animate(prog,pct,start,end,time=1000){
+        const circ=parseFloat(prog.dataset.circ);
+        const sOff=circ*(1-start/100);
+        const eOff=circ*(1-end/100);
+        const t0=performance.now();
+
+        function frame(now){
+            const p=Math.min((now-t0)/time,1);
+            const ease=1-Math.pow(1-p,3);
+            const cur=start+(end-start)*ease;
+            const off=sOff+(eOff-sOff)*ease;
+
+            prog.style.strokeDashoffset=off;
+            pct.textContent=Math.round(cur)+'%';
+
+            if(p<1) requestAnimationFrame(frame);
+        }
+        requestAnimationFrame(frame);
+    }
+
+    (function run(){
+        let d=200;
+        SKILLS.forEach((s,i)=>{
+            setTimeout(()=>{
+                animate(INST[s.id].prog,INST[s.id].pct,0,s.value,1000+i*150);
+            },d);
+            d+=150;
+        });
+    })();
+
+})();
+</script>
+</body>
+</html>
