@@ -10,45 +10,45 @@
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="d2c_navbar sticky-top">
-        <div class="container">
-            <div id="d2c_main_nav">
-                <!-- Logo -->
-                <a class="navbar-brand" href="#home">
-                    <img src="logo/rial black logo.png" alt="Logo">
-                </a>
+<nav class="d2c_navbar sticky-top">
+    <div class="container">
+        <div id="d2c_main_nav">
+            <!-- Logo -->
+            <a class="navbar-brand" href="index.html" data-section="home">
+                <img src="logo/rial black logo.png" alt="Logo">
+            </a>
 
-                <!-- Desktop Navigation -->
-                <div class="js-clone-nav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="about.html">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="servise.html">Services</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="portfolio.html">Portfolio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="contact.html" class="d2c_nav_btn">Contact Me</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Mobile Toggle Button -->
-                <button class="navbar-toggler" id="mobileMenuToggle">
-                    <i class="fas fa-bars"></i>
-                </button>
+            <!-- Desktop Navigation -->
+            <div class="js-clone-nav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" data-section="home" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-section="about" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-section="services" href="servise.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-section="portfolio" href="portfolio.html">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-section="contact" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="d2c_nav_btn">Contact Me</a>
+                    </li>
+                </ul>
             </div>
+
+            <!-- Mobile Toggle Button -->
+            <button class="navbar-toggler" id="mobileMenuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
-    </nav>
+    </div>
+</nav>
 
     <!-- Mobile Menu Overlay -->
     <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
@@ -82,7 +82,7 @@
                     <a class="nav-link" href="contact.html">Contact</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#contact" class="d2c_nav_btn">Contact Me</a>
+                    <a href="contact.html" class="d2c_nav_btn">Contact Me</a>
                 </li>
             </ul>
         </div>
@@ -260,38 +260,38 @@
             <p>Speak directly with the WDN-BD team. Fill out the form below to start discussing your project.</p>
         </header>
 
-        <div class="contact-content">
-            <div class="form-container">
-                <form id="contactForm" action="https://formsubmit.co/mdnadim9154@gmail.com" method="POST">
-                    <div class="form-row">
-                        <div class="input-group">
-                            <label for="firstName">First Name</label>
-                            <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
-                            <span class="error-message" id="firstNameError"></span>
-                        </div>
-                        <div class="input-group">
-                            <label for="lastName">Last Name</label>
-                            <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
-                            <span class="error-message" id="lastNameError"></span>
-                        </div>
-                    </div>
-                    
-                    <div class="input-group full-width">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" placeholder="Hello@mail.com" required>
-                        <span class="error-message" id="emailError"></span>
-                    </div>
+    <div class="contact-content">
+      <div class="form-container">
+       <form id="contactForm" action="#" method="POST"> 
+        <div class="form-row">
+          <div class="input-group">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
+             <span class="error-message" id="firstNameError"></span>
+          </div>
+          <div class="input-group">
+             <label for="lastName">Last Name</label>
+             <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
+             <span class="error-message" id="lastNameError"></span>
+         </div>
+       </div>
+        
+        <div class="input-group full-width">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="Hello@mail.com" required>
+            <span class="error-message" id="emailError"></span>
+        </div>
+        
+        <div class="input-group full-width">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Type message here..." required></textarea>
+            <span class="error-message" id="messageError"></span>
+        </div>
 
-                    <div class="input-group full-width">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="5" placeholder="Type message here..." required></textarea>
-                        <span class="error-message" id="messageError"></span>
-                    </div>
-
-                    <button type="submit" class="submit-btn">Send Message</button>
-                    <div id="successMessage" class="success-message"></div>
-                </form>
-            </div>
+        <button type="submit" class="submit-btn">Send Message</button>
+        <div id="successMessage" class="success-message"></div>
+     </form>
+   </div>
              
             <div class="info-container">
                 <h2>Contact Us</h2>
