@@ -2051,6 +2051,9 @@ footer > p:last-child {
     padding: 0px 0px 30px;
     width: 95%;
   }
+  .offer-max-width-box h2 {
+    font-size: 2rem;
+  }
 }
 
 /* Mobile (1 card) */
@@ -2243,6 +2246,10 @@ footer > p:last-child {
         top: 70px;
         right: 52px;
     }
+  .offer-max-width-box h2 {
+    font-size: 1.8rem !important;
+    margin-bottom: 5px !important;  
+ }
 }
 
 @media (max-width: 375px) {
