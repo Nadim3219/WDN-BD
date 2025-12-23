@@ -1198,6 +1198,7 @@ svg{ width:100%; height:100%; transform:rotate(-90deg); overflow:visible; }
     background: #f5f5ff;
     padding: 40px 0;
     text-align: center;
+    padding: 0px 20px;
 }
 .join-me-box{
     font-family: "Poppins", sans-serif;
