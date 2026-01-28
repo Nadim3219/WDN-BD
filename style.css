@@ -1787,17 +1787,16 @@ footer > p:last-child {
     }
 
     .hero-img-box {
-        order: 0;
         margin: 0 auto;
         width: 420px;
         height: 400px;
     }
     
     .hero-content-box {
-        order: 1;
+        
         text-align: center;
         padding-right: 0;
-        padding-top: 20px;
+        padding-top: 70px;
     }
     
     .hero-content-box p {
@@ -1827,13 +1826,13 @@ footer > p:last-child {
     }
 
     .about-img-box {
-        order: 0;
+        order: 1;
         height: 400px;
         max-width: 450px;
     }
     
     .about-text-content {
-        order: 1;
+        order: 0;
         text-align: center;
         padding-left: 0;
     }
@@ -1867,8 +1866,14 @@ footer > p:last-child {
     
     .hero-content-box h1 {
         font-size: 2.2rem; 
+        text-align: left;
     }
-    
+    .hero-content-box h3{
+        text-align: left;
+    }
+    .hero-content-box p{
+        text-align: left;
+    }
     .hero-img-box {
         width: 100%; 
         height: 400px;
@@ -1893,14 +1898,16 @@ footer > p:last-child {
     }
 
     .hero-btn-box {
-        flex-direction: column;
-    }
-
-    .hero-btn-box a {
-        margin: 10px auto;
-        width: 80%;
+        flex-direction: row;
     }
     
+    .hero-btn-box a {
+        margin: 10px auto;
+        
+    }
+    #contact-btn{
+        padding: 10px 30px;
+    }
     /* About Section Mobile Styles */
     .about-main-disply-grid {
         width: 100%;
@@ -1926,6 +1933,15 @@ footer > p:last-child {
     
     .about-text-content {
         padding: 0 20px;
+    }
+    .about-text-content h2{
+        text-align: left;
+    }
+    .about-text-content p{
+        text-align: left;
+    }
+    .about-text-content h3{
+        text-align: left;
     }
     .skill-paragraph{
     padding: 20px 0px 20px;
